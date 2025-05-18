@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./MainFeatures.css";
 
 const features = [
   {
@@ -31,7 +30,7 @@ const features = [
 
 const MainFeatures = () => {
   return (
-    <section className="features-grid">
+    <section className="mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {features.map((feat, i) => (
         <motion.div
           key={i}
@@ -39,9 +38,9 @@ const MainFeatures = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 }}
         >
-          <div className="feature-card">
-            <h3 className="feature-title">{feat.title}</h3>
-            <p className="feature-desc">{feat.desc}</p>
+          <div className="bg-gray-800 border border-yellow-500/20 shadow-xl rounded-2xl p-6">
+            <h3 className="text-xl font-semibold mb-2 text-yellow-400">{feat.title}</h3>
+            <p className="text-sm text-gray-300">{feat.desc}</p>
           </div>
         </motion.div>
       ))}
